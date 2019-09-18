@@ -1,0 +1,16 @@
+---
+-
+ # remote_user: root
+  hosts : all
+  sudo: yes
+  gather_facts: yes
+  tasks:
+    - name: install apache2
+      apt:
+        name: nginx
+        update_cache: yes
+        state: latest
+    - name: start service
+      service:
+        name: nginx
+        state: started
